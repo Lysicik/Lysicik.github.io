@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+    <meta charset="utf-8">
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="shortcut icon" type="image/x-icon" href="icon.jpg">
+
+    <title>YourMoney$$$</title>
+
+</head>
+<body>
+
+<div class = "Authorization">
+    <div class = "Title"><b>КОНВЕРТЕР  ВАЛЮТ...</b></div>
+    <div class = "Index"><a href="index.html">Главная</a></div>
+</div>
+
+<div class = "Page">
+<form class = "Form_Registration" onsubmit="GoToDataBase(); return false;">
+        <div class="Foto">Выберите фото</div>
+        <input type="file" name="photo" multiple accept="image/jpeg,image/png" size="30">
+        <input class="YourName" id="YourName" name="YourName" required placeholder="ФИО" type="text" maxlength="60">
+        <input class="Email" id="Email" name="Email" required placeholder="Электронная почта" type="email" maxlength="60">
+        <input class="New_Login" id="New_Login" name="New_Login"  required placeholder="Логин" type="text" maxlength="60">
+        <input class="New_Password" id="New_Password" name="New_Password"  required placeholder="Пароль" type="password" maxlength="60">
+        <input class="New_Password_2" id="New_Password_2" name="New_Password_2"  required placeholder="Введите пароль еще раз" type="password" maxlength="60">
+        <button type = "submit">Зарегистрироваться</button>
+</form>
+</div>
+
+</body>
+</html>

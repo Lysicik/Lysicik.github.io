@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+    <meta charset="utf-8">
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+    <link rel="stylesheet" href="styles3.css">
+    <link rel="shortcut icon" type="image/x-icon" href="icon.jpg">
+
+    <title>YourMoney$$$</title>
+
+</head>
+<body>
+
+<div class = "Authorization">
+    <div class = "Title"><b>КОНВЕРТЕР  ВАЛЮТ...</b></div>
+    <div class = "Index"><a href="index.html">Главная</a></div>
+</div>
+
+<div class = "Page">
+    <form class = "Form_Convert" onsubmit="GoToDataBase(); return false;">
+        <div class="comment1">Ваша валюта</div>
+        <select id="SelectYourMoney1">
+
+            <option value="Сurrency1">$</option>
+            <option value="Сurrency2">€</option>
+            <option value="Сurrency3">£</option>
+
+        </select>
+        <input class="" id="MoneyToConvert" name="MoneyToConvert" required placeholder="Сколько средств перевести" type="number" maxlength="20">
+        <div class="comment2">Покупаемая валюта</div>
+        <select id="SelectYourMoney2">
+
+            <option value="Сurrency1">$</option>
+            <option value="Сurrency2">€</option>
+            <option value="Сurrency3">£</option>
+
+        </select>
+        <input class="" id="MoneyAfterConvert" name="MoneyAfterConvert" required placeholder="Сколько средств плучится" type="number" maxlength="20">
+    </form>
+</div>
+
+</body>
+</html>

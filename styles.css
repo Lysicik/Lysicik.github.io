@@ -1,0 +1,278 @@
+body{
+    background-image: url("BG4.jpg");
+    background-repeat: repeat;
+}
+
+.Authorization{
+    display: flex;
+    height: auto;
+    width: 1200px;
+    margin:2% auto;
+    background-color: white;
+    opacity: 0.9;
+    padding: 30px;
+}
+.Title{
+    font-size: 200%;
+    margin: 21px;
+    color: black;
+    padding: 1% 1%;
+
+}
+
+.Sign_in>a{
+    font-size: 170%;
+    text-decoration: none;
+    color: black;
+    margin-left: 20%;
+    padding: 3%;
+}
+
+
+.Registration>a{
+    font-size: 170%;
+    color: black;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.Sign_in>a:hover{
+    font-size: 170%;
+    text-decoration: none;
+    color: #767073;
+    margin-left: 20%;
+    padding: 3%;
+}
+
+.Registration>a:hover{
+    font-size: 170%;
+    color: #767073;
+    text-decoration: none;
+    border: 2px solid #767073;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+
+.Sign_in{
+    margin: 35px 30px;
+    margin-left: 9%;
+}
+.Sign_out{
+    margin: 35px 30px;
+
+}
+
+.Sign_out>a{
+    font-size: 170%;
+    text-decoration: none;
+    color: black;
+    margin-left: -15px;
+}
+
+.Sign_out>a:hover{
+    font-size: 170%;
+    text-decoration: none;
+    color: #767073;
+    }
+
+
+
+.Convert{
+    margin: 35px 30px;
+
+}
+
+.Convert>a{
+    font-size: 170%;
+    text-decoration: none;
+    color: black;
+    margin-left: -15px;
+}
+
+.Convert>a:hover{
+    font-size: 170%;
+    text-decoration: none;
+    color: #767073;
+}
+
+
+
+.Registration{
+    margin: 35px 30px;
+
+}
+
+.Page{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+    width: 1200px;
+    margin:3% auto;
+    background-color: white;
+    opacity: 0.9;
+    padding: 30px;
+}
+
+.Money{
+    background-color: #cbc5c8;
+    height: 200px;
+    width: 400px;
+    margin: 2% 2%;
+    padding: 10px;
+    z-index: 10;
+    position: relative;
+    border-radius: 5px;
+    font-size: 170%;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+    body{
+        background-image: url("BG4.jpg");
+        background-repeat: repeat;
+    }
+
+    .Authorization{
+        display: flex;
+        height: auto;
+        width: 900px;
+        margin:2% auto;
+        background-color: white;
+        opacity: 0.9;
+        padding: 20px;
+    }
+    .Title{
+        font-size: 170%;
+        margin: 7px;
+        color: black;
+    }
+
+    .Sign_in>a{
+        font-size: 170%;
+        text-decoration: none;
+        color: black;
+        padding: 1%;
+    }
+
+    .Registration>a{
+        font-size: 170%;
+        color: black;
+        text-decoration: none;
+        border: 2px solid black;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    .Sign_in>a:hover{
+        font-size: 170%;
+        text-decoration: none;
+        color: #767073;
+        margin-left: 30%;
+        padding: 3%;
+    }
+
+    .Registration>a:hover{
+        font-size: 170%;
+        color: #767073;
+        text-decoration: none;
+        border: 2px solid #767073;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+
+
+    .Sign_in{
+        margin: 35px 30px;
+        margin-left: 0;
+    }
+
+    .Registration{
+
+        margin: 35px 20px;
+
+    }
+
+
+    .Sign_out{
+        margin: 35px 20px;
+
+    }
+
+    .Sign_out>a{
+        font-size: 170%;
+        text-decoration: none;
+        color: black;
+        margin-left: -15px;
+    }
+
+    .Sign_out>a:hover{
+        font-size: 170%;
+        text-decoration: none;
+        color: #767073;
+    }
+
+
+
+    .Convert{
+        margin: 35px 20px;
+
+    }
+
+    .Convert>a{
+        font-size: 170%;
+        text-decoration: none;
+        color: black;
+        margin-left: -15px;
+    }
+
+    .Convert>a:hover{
+        font-size: 170%;
+        text-decoration: none;
+        color: #767073;
+    }
+
+
+
+
+    .Page{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: auto;
+        width: 900px;
+        margin: 3% auto;
+        background-color: white;
+        opacity: 0.9;
+        padding: 20px;
+
+    }
+
+    .Money{
+
+        background-color: #cbc5c8;
+        height: 300px;
+        width: 700px;
+        margin: 2%;
+        padding: 10px;
+        z-index: 10;
+        position: relative;
+        border-radius: 5px;
+        font-size: 170%;
+        text-decoration: none;
+    }
+}
