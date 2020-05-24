@@ -8,24 +8,61 @@ import {Convert} from "./Convert/Convert";
 import {onLogin, onRegister} from "./firebase";
 
 export const Pages = {
-  main: 'main',
-  login: 'login',
-  register: 'register',
-  convert: 'convert'
+  main: '/main',
+  login: '/login',
+  register: '/register',
+  convert: '/convert'
 };
 
-function isValidEmail(email) {
-  return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email);
-}
+const callbackHistory = () => {
+  window.history.pushState({}, "", document.location.origin + Pages.main)
+};
 
 export class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      page: Pages.register,
-      isLogin: false
+      page: Pages.main,
+      isLogin: localStorage.getItem('isLogin') === 'true'
     };
+  }
+
+  componentDidMount() {
+    const {isLogin} = this.state;
+
+    switch (document.location.pathname) {
+      case Pages.convert: {
+        if (isLogin) {
+          this.setState({page: Pages.convert})
+        } else {
+          this.setState({page: Pages.main}, callbackHistory)
+        }
+
+        break;
+      }
+      case Pages.login: {
+        if (!isLogin) {
+          this.setState({page: Pages.login})
+        } else {
+          this.setState({page: Pages.main}, callbackHistory)
+        }
+
+        break;
+      }
+      case Pages.register: {
+        if (!isLogin) {
+          this.setState({page: Pages.register})
+        } else {
+          this.setState({page: Pages.main}, callbackHistory)
+        }
+
+        break;
+      }
+      default: {
+        this.setState({page: Pages.main}, callbackHistory)
+      }
+    }
   }
 
   render() {
@@ -43,23 +80,20 @@ export class App extends React.Component {
   }
 
   onPageChange(newPage) {
-    this.setState({page: newPage})
+    this.setState({page: newPage}, () => {
+      window.history.pushState({}, "", document.location.origin + newPage)
+    })
   }
 
   onLogin(login, password) {
-    if (login && password) {
-      onLogin(login, password, () => {this.setState({isLogin: true, page: Pages.main})}, () => {alert("При логине произошла ошибка")});
-    }
+    onLogin(login, password, () => {this.setState({isLogin: true, page: Pages.main}, () => {localStorage.setItem('isLogin', true); callbackHistory();})}, () => {alert("При логине произошла ошибка")});
   }
 
   onRegister(login, password, email, file) {
-    console.log('isValidEmail: ', isValidEmail(email));
-    if (login && password && isValidEmail(email) && file) {
-      onRegister(login, password, email, file, () => {this.setState({isLogin: true, page: Pages.main})}, () => {alert("При регистрации произошла ошибка")});
-    }
+    onRegister(login, password, email, file, () => {this.setState({isLogin: true, page: Pages.main}, () => {localStorage.setItem('isLogin', true); callbackHistory();})}, () => {alert("При регистрации произошла ошибка")});
   }
 
   onLogout() {
-    this.setState({isLogin: false, page: Pages.main})
+    this.setState({isLogin: false, page: Pages.main}, () => {localStorage.setItem('isLogin', false); callbackHistory();})
   }
 };

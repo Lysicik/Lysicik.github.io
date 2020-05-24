@@ -1,6 +1,10 @@
 import React from 'react';
 import './Register.css';
 
+function isValidEmail(email) {
+    return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email);
+}
+
 export class Register extends React.Component {
     constructor() {
         super();
@@ -8,12 +12,13 @@ export class Register extends React.Component {
         this.state = {
             name: '',
             password: '',
-            email: ''
+            email: '',
+            error: ''
         };
     }
 
     render() {
-        const { name, password, email } = this.state;
+        const { name, password, email, error } = this.state;
 
         return (
             <div className="register">
@@ -29,6 +34,7 @@ export class Register extends React.Component {
                     >
                         Зарегестрироваться
                     </button>
+                    <div className="register__elem-error">{error}</div>
                 </div>
             </div>
         );
@@ -51,6 +57,28 @@ export class Register extends React.Component {
 
         const file = document.getElementById('file_input').files[0];
 
-        this.props.onRegister(name, password, email, file);
+        if (!name) {
+            this.setState({error: "Вы не ввели логин"});
+            return;
+        }
+
+        if (!password) {
+            this.setState({error: "Вы не ввели пароль"});
+            return;
+        }
+
+        if (!file) {
+            this.setState({error: "Вы не добавили картинку"});
+            return;
+        }
+
+        if (!email || !isValidEmail(email)) {
+            this.setState({error: "Вы ввели невалидную почту"});
+            return;
+        }
+
+        this.setState({error: "Загрузка..."}, () => {
+            this.props.onRegister(name, password, email, file);
+        });
     }
 }

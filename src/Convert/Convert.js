@@ -43,34 +43,30 @@ export class Convert extends React.Component {
                     </select>
                         <div className="convert__value">{val2}</div>
                     </div>
-                    <div className="convert__button-wrapper">
-                        <button className="convert__button" onClick={this.onButtonClick.bind(this)}>Посчитать</button>
-                    </div>
                 </div>
             </div>
         );
     }
 
     onKey1Change(e) {
-        this.setState({key1: e.target.value});
+        this.setState({key1: e.target.value}, () => {this.onButtonClick()});
     }
 
     onKey2Change(e) {
-        this.setState({key2: e.target.value});
+        this.setState({key2: e.target.value}, () => {this.onButtonClick()});
     }
 
     onValChange(e) {
-        this.setState({val1: e.target.value, val2: '???'});
+        this.setState({val1: e.target.value.replace(/\D+/g, ''), val2: '???'}, () => {this.onButtonClick()});
     }
 
     onButtonClick() {
         const { key1, key2, val1 } = this.state;
 
-        if (key1 && key2) {
+        if (key1 && key2 && val1) {
             fetch(`https://api.exchangeratesapi.io/latest?symbols=${key2}&base=${key1}`)
                 .then(r => r.json())
                 .then(({rates}) => {
-                    console.log(val1 * rates[key2]);
                     this.setState({ val2: val1 * rates[key2] })
                 });
         }

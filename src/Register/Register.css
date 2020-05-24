@@ -29,3 +29,10 @@
     height: 35px;
     cursor: pointer;
 }
+
+.register__elem-error {
+    margin-top: 10px;
+    font-size: 15px;
+    color: red;
+    text-align: center;
+}

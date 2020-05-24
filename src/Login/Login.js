@@ -7,12 +7,13 @@ export class Login extends React.Component {
 
         this.state = {
             name: '',
-            password: ''
+            password: '',
+            error: ''
         };
     }
 
     render() {
-        const { name, password } = this.state;
+        const { name, password, error } = this.state;
 
         return (
             <div className="login">
@@ -26,6 +27,7 @@ export class Login extends React.Component {
                     >
                         Войти
                     </button>
+                    <div className="login__elem-error">{error}</div>
                 </div>
             </div>
         );
@@ -41,6 +43,16 @@ export class Login extends React.Component {
 
     onLogin() {
         const { name, password } = this.state;
+
+        if (!name) {
+            this.setState({error: "Вы не ввели логин"});
+            return;
+        }
+
+        if (!password) {
+            this.setState({error: "Вы не ввели пароль"});
+            return;
+        }
 
         this.props.onLogin(name, password);
     }
