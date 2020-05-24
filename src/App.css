@@ -1,0 +1,10 @@
+.app {
+  background-image: url("BG4.jpg");
+  background-repeat: repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}

@@ -1,0 +1,31 @@
+.register {
+    display: flex;
+    justify-content: center;
+}
+
+.register__container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-top: 120px;
+    background-color: white;
+    opacity: 0.9;
+    padding: 60px;
+}
+
+.register__elem {
+    margin-top: 10px;
+    height: 35px;
+}
+
+.register__title {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.register__button {
+    margin-top: 10px;
+    height: 35px;
+    cursor: pointer;
+}

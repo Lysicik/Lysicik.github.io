@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.main__table {
+    background-color: white;
+    opacity: 0.9;
+    padding: 20px;
+    margin: auto;
+    position: absolute;
+}

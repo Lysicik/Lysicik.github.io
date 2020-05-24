@@ -1,0 +1,45 @@
+.convert {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.convert__content {
+    background-color: white;
+    opacity: 0.9;
+    padding: 20px;
+    margin: auto;
+    position: absolute;
+}
+
+.convert__select {
+    width: 150px;
+    height: 30px;
+}
+
+.convert__wrapper {
+    display: flex;
+    margin-top: 10px;
+}
+
+.convert__button-wrapper {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center
+}
+
+.convert__input {
+    height: 25px;
+    margin-left: 20px;
+}
+
+.convert__value {
+    height: 25px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.convert__button {
+    height: 30px;
+    width: 200px;
+}
