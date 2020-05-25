@@ -27,7 +27,7 @@ export class Register extends React.Component {
                     <input id="file_input" type="file" accept="image/jpeg,image/png" className="register__elem" />
                     <input value={name} onChange={this.onNameChange.bind(this)} placeholder={'Логин'} className="register__elem"/>
                     <input value={email} onChange={this.onEmailChange.bind(this)} placeholder={'Почта'} className="register__elem"/>
-                    <input value={password} onChange={this.onPasswordChange.bind(this)} placeholder={'Пароль'} className="register__elem"/>
+                    <input value={password} type="password" onChange={this.onPasswordChange.bind(this)} placeholder={'Пароль'} className="register__elem"/>
                     <button
                         className="register__button"
                         onClick={this.onRegister.bind(this)}

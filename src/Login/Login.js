@@ -20,7 +20,7 @@ export class Login extends React.Component {
                 <div className="login__container">
                     <div className="login__title">Добро пожаловать</div>
                     <input value={name} onChange={this.onNameChange.bind(this)} placeholder={'Логин'} className="login__elem"/>
-                    <input value={password} onChange={this.onPasswordChange.bind(this)} placeholder={'Пароль'} className="login__elem"/>
+                    <input value={password} type="password" onChange={this.onPasswordChange.bind(this)} placeholder={'Пароль'} className="login__elem"/>
                     <button
                         className="login__button"
                         onClick={this.onLogin.bind(this)}
